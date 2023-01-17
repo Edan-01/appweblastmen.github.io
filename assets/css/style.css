@@ -1,0 +1,30 @@
+ .boton-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 65px;
+    height: 58px;
+    background-color: transparent;
+    background-image: url('/assets/img/chat.png');
+    border: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+  }
+   /* Estilos para la ventana flotante */
+   .floating-window {
+    display: none;
+    background-size: cover;
+    position: fixed; /* Fija la posición de la ventana */
+    bottom: 0; /* Posiciona la ventana en la mitad de la pantalla (verticalmente) */
+    right: 0; /* Posiciona la ventana en la mitad de la pantalla (horizontalmente) */
+    transform: translate(23%, -111%); /* Ajusta la posición de la ventana al centro */
+    width: 300px; /* Ancho de la ventana */
+    height: 200px; /* Alto de la ventana */
+    z-index: 2; /* Establece el índice z de la ventana por encima de otros elementos */
+  }
+  .chatbox{
+    border-radius: 25px;
+    width: 225px; /* Ancho de la ventana */
+    height: 350px; /* Alto de la ventana */
+  }
