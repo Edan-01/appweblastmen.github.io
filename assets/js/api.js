@@ -1,10 +1,11 @@
 let productList = document.getElementById("product-list");
 let pagination = document.querySelector('.pagination');
+const select = document.getElementById("filter-select");
 let currentPage = 1;
 let itemsPerPage = 12;
 let data;
 
-fetch("http://lastpro-001-site1.btempurl.com/api/Producto")
+fetch("https://hostingweb0-001-site4.atempurl.com/api/Producto")
     .then(response => response.json())
     .then(d => {
         data = d;
@@ -29,15 +30,14 @@ function displayProducts(data) {
                 <div class="card rounded-0">
                     <img class="card-img rounded-0 img-fluid" src="https://verdenaturalmarket.pe/1378-catalog_medium/mermelada-mango-organico-yacon-c-agave-240-gr.jpg">
                     <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                        <ul class="list-unstyled">                            
-                            <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i></a></li>
-                        </ul>
+                        <ul class="list-unstyled">                    
+                        <li><a id="product-button" data-product-id="${product.idProducto}" class="btn btn-success text-white mt-2" href="shop-single.html?productId=${product.idProducto}"><i class="far fa-eye"></i></a></li>
                     </div>
                 </div>
-                <div class="card-body">
-                    <a href="shop-single.html" class="h3 text-decoration-none">${product.nombreProducto.toUpperCase()} | ${product.unidad_Medida.toUpperCase()}</a>
-                    <p class="text-center mb-0">S/ ${product.precioVenta}</p
-                </div>
+                <div style="padding-left: 1.25rem; padding-right: 1.25rem; height: 80px; max-width: 200px; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center;">
+                    <a class="h3 text-decoration-none">${product.nombreProducto.substring(0,23)} | ${product.unidad_Medida}</a>
+                </div>  
+                <div style="background-color: #59AB6E;"><p class="text-center mb-0">S/ ${product.precioVenta} Soles</p></div>
             </div>
         `;
         productList.appendChild(productRow);
@@ -64,11 +64,11 @@ function createPagination(data) {
 }
 
 // Función para filtrar los productos
-function filterProducts(filterValue) {
+function filterProducts(filterValue, category) {
     // Ordenar los productos según el valor seleccionado en el select
     switch (filterValue) {
         case "default":
-            fetch("http://lastpro-001-site1.btempurl.com/api/Producto")
+            fetch("https://hostingweb0-001-site4.atempurl.com/api/Producto")
             .then(response => response.json())
             .then(d => {
             data = d;
@@ -93,14 +93,8 @@ function filterProducts(filterValue) {
 }
 
 // Agregar evento change al select
-const select = document.getElementById("filter-select");
 select.addEventListener("change", function() {
     const selectedValue = this.value;
     filterProducts(selectedValue);
 });
-
-
-
-
-
 
