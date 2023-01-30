@@ -199,13 +199,13 @@ https://templatemo.com/tm-559-zay-shop
                 <div class="col-lg-6 m-auto" style="padding-right: 3rem;">
                     <h1 class="h1">Misión</h1>
                     <p>
-                        Nuestra empresa busca ofrecer a nuestros clientes el mejor servicio en la venta de productos naturales, brindando una eficiente atención a nuestros clientes garantizándoles su satisfacción completa.
+                        Nuestra empresa busca ofrecer a nuestros clientes el mejor servicio en la venta de productos naturales, brindando una eficiente atención a nuestros clientes garantizándoles su satisfacción completa
                     </p>
                 </div>
                 <div class="col-lg-6 m-auto" style="padding-right: 3rem;">
                     <h1 class="h1">Visión</h1>
                     <p>
-                        Consolidarnos como la empresa número uno en el ramo de venta de productos naturales, con las mejores atenciones, y precio en el mercado, llegando a cubrir el mercado nacional y posteriormente a nivel internaciona
+                        Consolidarnos como la empresa número uno en el ramo de venta de productos naturales, con las mejores atenciones, y precio en el mercado, llegando a cubrir el mercado nacional y posteriormente a nivel internacional
                     </p>
                 </div>
             </div>
@@ -305,6 +305,15 @@ https://templatemo.com/tm-559-zay-shop
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/chatbot.js"></script>
+    <script>
+        button.addEventListener("click", function() {
+            if (i >= 1 && i <= totalPages) {
+                currentPage = i;
+                displayProducts(data, id_Categoria);
+                createPagination(data, id_Categoria);
+            }
+        });
+    </script>
     <!-- <iframe src="chat/index.html" frameborder="0" async></iframe>    End Script -->
 </body>
 

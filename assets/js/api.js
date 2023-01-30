@@ -3,6 +3,7 @@ let pagination = document.querySelector('.pagination');
 const select = document.getElementById("filter-select");
 let currentPage = 1;
 let itemsPerPage = 12;
+let id_Categoria = null;
 let data;
 
 fetch("https://hostingweb0-001-site4.atempurl.com/api/Producto")
@@ -15,10 +16,11 @@ fetch("https://hostingweb0-001-site4.atempurl.com/api/Producto")
     .catch(error => console.log(error));
 
 //Funcion para mostrar productos
-function displayProducts(data) {
+function displayProducts(data, id_Categoria) {
+    let products = id_Categoria ? data.filter(product => product.idCategoria === id_Categoria) : data;
     let startIndex = (currentPage - 1) * itemsPerPage;
     let endIndex = startIndex + itemsPerPage;
-    let products = data.slice(startIndex, endIndex);
+    products = products.slice(startIndex, endIndex);
 
     productList.innerHTML = "";
 
@@ -44,9 +46,21 @@ function displayProducts(data) {
     });
 }
 
+
+
+// Aquí realizas una llamada a una API o cargas los productos
+fetch("https://hostingweb0-001-site4.atempurl.com/api/Producto")
+  .then(response => response.json())
+  .then(data => {
+      // Aquí manejas la respuesta de la API, probablemente quieras reemplazar los productos en el HTML
+      displayProducts(data, id_Categoria);
+  });
+
+
 //Funcion para crear botones de paginación
-function createPagination(data) {
-    let totalPages = Math.ceil(data.length / itemsPerPage);
+function createPagination(data, id_Categoria) {
+    let products = (id_Categoria === null || id_Categoria === undefined) ? data : data.filter(product => product.idCategoria === id_Categoria);
+    let totalPages = Math.ceil(products.length / itemsPerPage);
     pagination.innerHTML = "";
     for (let i = 1; i <= totalPages; i++) {
         let button = document.createElement("button");
@@ -55,16 +69,17 @@ function createPagination(data) {
             button.classList.add("active");
         }
         button.addEventListener("click", function() {
-            currentPage = i;
-            displayProducts(data);
-            createPagination(data);
-        });
-        pagination.appendChild(button);
+        currentPage = i;
+        displayProducts(data, id_Categoria);
+        createPagination(data, id_Categoria);
+    });
+    pagination.appendChild(button);
     }
 }
 
-// Función para filtrar los productos
-function filterProducts(filterValue, category) {
+
+// Función para filtrar los productos de manera general
+function filtergeneral(filterValue) {
     // Ordenar los productos según el valor seleccionado en el select
     switch (filterValue) {
         case "default":
@@ -88,13 +103,66 @@ function filterProducts(filterValue, category) {
             break;
     }
     // Mostrar los productos ordenados
-    displayProducts(data);
-    createPagination(data);
+    displayProducts(data, id_Categoria);
+    createPagination(data, id_Categoria);
 }
 
-// Agregar evento change al select
+// Agregar evento change a la funcion select filtergeneral
 select.addEventListener("change", function() {
     const selectedValue = this.value;
-    filterProducts(selectedValue);
-});
+    let id_Categoria = select.value;
+    displayProducts(data, id_Categoria);
+    createPagination(data, id_Categoria);
+    filtergeneral(selectedValue);
+  });
 
+
+//Designar el filtro de los productos por categoria
+document.getElementById("all-button").addEventListener("click", function() {
+    id_Categoria = null;
+    currentPage = 1;
+    displayProducts(data, id_Categoria);
+    createPagination(data, id_Categoria);
+  });
+document.getElementById("alimentos-button").addEventListener("click", function() {
+    id_Categoria = 6;
+    currentPage = 1;
+    displayProducts(data, id_Categoria);
+    createPagination(data, id_Categoria);
+});
+  
+document.getElementById("bebidas-button").addEventListener("click", function() {
+    id_Categoria = 7;
+    currentPage = 1;
+    displayProducts(data, id_Categoria);
+    createPagination(data, id_Categoria);
+});
+  
+document.getElementById("bienestarN-button").addEventListener("click", function() {
+    id_Categoria = 5;
+    currentPage = 1;
+    displayProducts(data, id_Categoria);
+    createPagination(data, id_Categoria);
+});
+  
+document.getElementById("cuidadoP-button").addEventListener("click", function() {
+    id_Categoria = 2;
+    currentPage = 1;
+    displayProducts(data, id_Categoria);
+    createPagination(data, id_Categoria);
+});
+  
+document.getElementById("dietasE-button").addEventListener("click", function() {
+    id_Categoria = 4;
+    currentPage = 1;
+    displayProducts(data, id_Categoria);
+    createPagination(data, id_Categoria);
+});
+  
+document.getElementById("medicinaN-button").addEventListener("click", function() {
+    id_Categoria = 3;
+    currentPage = 1;
+    displayProducts(data, id_Categoria);
+    createPagination(data, id_Categoria);
+});
+  

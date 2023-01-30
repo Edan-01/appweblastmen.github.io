@@ -138,54 +138,59 @@ https://templatemo.com/tm-559-zay-shop
         <div class="row">
             <div class="col-lg-3">
                 <h1 class="h2 pb-4">Categorias</h1>
-                    <ul class="list-unstyled templatemo-accordion">
-                        <li class="pb-3">
-                            <a data-id="1" class="collapsed d-flex justify-content-between h3 text-decoration-none">
-                                Alimentos
-                            </a>
-                        </li>
-                        <li class="pb-3">
-                            <a data-id="2" class="collapsed d-flex justify-content-between h3 text-decoration-none">
-                                Bebidas
-                            </a>
-                        </li>
-                        <li class="pb-3">
-                            <a data-id="3" class="collapsed d-flex justify-content-between h3 text-decoration-none">
-                                Bienestar Natural
-                            </a>
-                        </li>
-                        <li class="pb-3">
-                            <a data-id="4" class="collapsed d-flex justify-content-between h3 text-decoration-none">
-                                Cuidado Personal
-                            </a>
-                        </li>
-                        <li class="pb-3">
-                            <a data-id="5" class="collapsed d-flex justify-content-between h3 text-decoration-none">
-                                Dietas Especiales
-                            </a>
-                        </li>
-                        <li class="pb-3">
-                            <a data-id="6" class="collapsed d-flex justify-content-between h3 text-decoration-none">
-                                Medicina Natural
-                            </a>
-                        </li>
-                    </ul>
+                <ul class="list-unstyled templatemo-accordion">
+                  <li class="pb-3">
+                    <a href="#" class="collapsed d-flex justify-content-between h3 text-decoration-none categoria" id="all-button">
+                        All
+                    </a>
+                  </li>
+                  <li class="pb-3">
+                    <a href="#" class="collapsed d-flex justify-content-between h3 text-decoration-none categoria" id="alimentos-button">
+                      Alimentos
+                    </a>
+                  </li>
+                  <li class="pb-3">
+                    <a href="#" class="collapsed d-flex justify-content-between h3 text-decoration-none categoria" id="bebidas-button">
+                      Bebidas
+                    </a>
+                  </li>
+                  <li class="pb-3">
+                    <a href="#" class="collapsed d-flex justify-content-between h3 text-decoration-none categoria" id="bienestarN-button">
+                      Bienestar Natural
+                    </a>
+                  </li>
+                  <li class="pb-3">
+                    <a href="#" class="collapsed d-flex justify-content-between h3 text-decoration-none categoria" id="cuidadoP-button">
+                      Cuidado Personal
+                    </a>
+                  </li>
+                  <li class="pb-3">
+                    <a href="#" class="collapsed d-flex justify-content-between h3 text-decoration-none categoria" id="dietasE-button">
+                      Dietas Especiales
+                    </a>
+                  </li>
+                  <li class="pb-3">
+                    <a href="#" class="collapsed d-flex justify-content-between h3 text-decoration-none categoria" id="medicinaN-button">
+                      Medicina Natural
+                    </a>
+                  </li>
+                </ul>
             </div>
-
+            
             <div class="col-lg-9">
                 <div class="row">                    
                     <div class="col-md-6 pb-4">
                         <div class="d-flex">
                             <select class="form-control" id="filter-select">
-                                <option value="default">Presentar</option>
+                                <option value="default">Inicio</option>
                                 <option value="name-asc">A - Z</option>
                                 <option value="price-desc">Precio Mayor a Menor</option>
                                 <option value="price-asc">Precio Menor a Mayor</option>
                             </select>
                         </div>
                     </div>
-                </div>                
-                              
+                </div>
+
                 <!-- START CONTENIDO PRODUCTOS -->                               
                 <div class="row" id="product-list">
                 </div>
@@ -322,6 +327,7 @@ https://templatemo.com/tm-559-zay-shop
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/chatbot.js"></script>
     <script src="assets/js/api.js"></script>
+      
     <!-- End Script -->
 </body>
 
