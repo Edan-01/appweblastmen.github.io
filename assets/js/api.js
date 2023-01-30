@@ -124,43 +124,44 @@ document.getElementById("all-button").addEventListener("click", function() {
     displayProducts(data, id_Categoria);
     createPagination(data, id_Categoria);
   });
+
 document.getElementById("alimentos-button").addEventListener("click", function() {
-    id_Categoria = 6;
-    currentPage = 1;
-    displayProducts(data, id_Categoria);
-    createPagination(data, id_Categoria);
-});
-  
-document.getElementById("bebidas-button").addEventListener("click", function() {
-    id_Categoria = 7;
-    currentPage = 1;
-    displayProducts(data, id_Categoria);
-    createPagination(data, id_Categoria);
-});
-  
-document.getElementById("bienestarN-button").addEventListener("click", function() {
-    id_Categoria = 5;
-    currentPage = 1;
-    displayProducts(data, id_Categoria);
-    createPagination(data, id_Categoria);
-});
-  
-document.getElementById("cuidadoP-button").addEventListener("click", function() {
     id_Categoria = 2;
     currentPage = 1;
     displayProducts(data, id_Categoria);
     createPagination(data, id_Categoria);
 });
   
-document.getElementById("dietasE-button").addEventListener("click", function() {
+document.getElementById("bebidas-button").addEventListener("click", function() {
+    id_Categoria = 3;
+    currentPage = 1;
+    displayProducts(data, id_Categoria);
+    createPagination(data, id_Categoria);
+});
+  
+document.getElementById("bienestarN-button").addEventListener("click", function() {
     id_Categoria = 4;
     currentPage = 1;
     displayProducts(data, id_Categoria);
     createPagination(data, id_Categoria);
 });
   
+document.getElementById("cuidadoP-button").addEventListener("click", function() {
+    id_Categoria = 5;
+    currentPage = 1;
+    displayProducts(data, id_Categoria);
+    createPagination(data, id_Categoria);
+});
+  
+document.getElementById("dietasE-button").addEventListener("click", function() {
+    id_Categoria = 6;
+    currentPage = 1;
+    displayProducts(data, id_Categoria);
+    createPagination(data, id_Categoria);
+});
+  
 document.getElementById("medicinaN-button").addEventListener("click", function() {
-    id_Categoria = 3;
+    id_Categoria = 7;
     currentPage = 1;
     displayProducts(data, id_Categoria);
     createPagination(data, id_Categoria);
