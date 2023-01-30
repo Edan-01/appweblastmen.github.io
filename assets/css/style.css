@@ -28,3 +28,26 @@
     width: 225px; /* Ancho de la ventana */
     height: 350px; /* Alto de la ventana */
   }
+
+  .pagination-button {
+    background-color: #ffffff;
+    color: #59AB6E;
+    border: 1px solid #59AB6E;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+}
+
+.pagination-button:hover {
+    background-color: #59AB6E;
+    color: #ffffff;
+}
+
+.pagination-button.active {
+    background-color: #59AB6E;
+    color: #ffffff;
+}
+

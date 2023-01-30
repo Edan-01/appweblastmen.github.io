@@ -29,11 +29,11 @@ function displayProducts(data, id_Categoria) {
         productRow.classList.add("col-md-3");
         productRow.innerHTML = `
             <div class="card mb-4 product-wap rounded-0">
-                <div class="card rounded-0">
-                    <img class="card-img rounded-0 img-fluid" src="https://verdenaturalmarket.pe/1378-catalog_medium/mermelada-mango-organico-yacon-c-agave-240-gr.jpg">
-                    <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                <div class="card rounded-0 align-items-center">
+                <img src="assets/img/icon_lastm.ico" style="width: 60px; height: auto;">
+                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                         <ul class="list-unstyled">                    
-                        <li><a id="product-button" data-product-id="${product.idProducto}" class="btn btn-success text-white mt-2" href="shop-single.html?productId=${product.idProducto}"><i class="far fa-eye"></i></a></li>
+                        <li><a id="product-button" data-product-id="${product.idProducto}" class="btn btn-success text-white mt-2" href="products-single.html?productId=${product.idProducto}"><i class="far fa-eye"></i></a></li>
                     </div>
                 </div>
                 <div style="padding-left: 1.25rem; padding-right: 1.25rem; height: 80px; max-width: 200px; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center;">
@@ -45,8 +45,6 @@ function displayProducts(data, id_Categoria) {
         productList.appendChild(productRow);
     });
 }
-
-
 
 // Aquí realizas una llamada a una API o cargas los productos
 fetch("https://hostingweb0-001-site4.atempurl.com/api/Producto")
@@ -65,6 +63,7 @@ function createPagination(data, id_Categoria) {
     for (let i = 1; i <= totalPages; i++) {
         let button = document.createElement("button");
         button.innerHTML = i;
+        button.classList.add("pagination-button");
         if (i === currentPage) {
             button.classList.add("active");
         }
@@ -76,6 +75,7 @@ function createPagination(data, id_Categoria) {
     pagination.appendChild(button);
     }
 }
+
 
 
 // Función para filtrar los productos de manera general
